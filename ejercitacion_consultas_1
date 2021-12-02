@@ -1,0 +1,46 @@
+## 1er ejercicio: 
+
+CREATE TABLE curso (
+
+ codigo INT NOT NULL,
+
+ nombre VARCHAR(50) NOT NULL,
+
+ descripcion VARCHAR(50),
+
+ turno VARCHAR(50) NOT NULL,
+ PRIMARY KEY(codigo)
+
+);
+
+## 2do ejercicio:
+
+ALTER TABLE curso 
+ADD cupo INT NOT NULL DEFAULT 20
+
+## 3er ejercicio:
+
+INSERT INTO curso (codigo, nombre, descripcion, turno, cupo)
+VALUES(101, "Algoritmos", "Algoritmos y Estructuras de Datos", "Mañana", 35)
+
+INSERT INTO curso (codigo, nombre, descripcion, turno, cupo)
+VALUES(102, "Matemática Discreta", "", "Tarde", 30)
+
+## 4to ejercicio:
+
+INSERT INTO curso (codigo, descripcion, turno, cupo)
+VALUES(103, "", "Tarde", 36)                            //Dio error porque el nombre era NULL 
+
+## 5to ejercicio:
+
+INSERT INTO curso (codigo, nombre, descripcion, turno, cupo)
+VALUES(101, "Literatura", "", "Tarde", 36)                   //Dio error porque el Id era repetido
+
+## 6to ejercicio:
+
+UPDATE curso
+SET cupo = 25
+
+## 7mo ejercicio:
+
+DELETE FROM curso WHERE codigo = 101
